@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Slangify",
+    "version": "1.0",
+    "description": "A configurable Chrome extension to slangify texts on websites by clicking on them",
+    "browser_action": {
+      "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["scripts/content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "options_page": "popup/popup.html"
+  }
+  
